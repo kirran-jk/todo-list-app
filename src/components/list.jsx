@@ -1,41 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './list.css';
 
 function List(props) {
+    const {
+        tasks,
+        setTasks,
+        username
+    } = props
 
-    var tasks = props.tasks[props.username];
+    const userTasks = tasks[username];
     
     const deleteTask = (value) => {
-        tasks = tasks.filter((item) => {return item !== value})
-        props.tasks[props.username] = tasks
-        props.setTasks({...props.tasks})
+        delete tasks[username][value]
+        props.setTasks({...tasks})
     }
 
-    const [isActive, setActive] = useState({});
+    const checkTask = (value) => {
+        tasks[username][value] = !tasks[username][value]
+        setTasks({...tasks})
+    }
 
-    const checkTask = (index) => () => {
-        setActive(state => ({
-            ...state,
-            [index]: !state[index]
-        }));
-    } 
+    const [count, setCount] = useState(0);
 
+    useEffect(() => {
+        let count = 0;
+        Object.keys(userTasks).forEach((task) => {
+            if (!userTasks[task]){
+                count++;
+            }
+        })
+        setCount(count);
+    });
 
     return (
+        <>
         <div>
-            {tasks.map((task, index) => 
+            {Object.keys(userTasks).map(task => 
             <li className= "list_item" key={task}>
                 <div className="list_item_container">
-                <button className="button_check" onClick={checkTask(index)}>
-                {isActive[index] ? "✅" : null}
+                <button className="button_check" onClick={() => checkTask(task)}>
+                {userTasks[task] ? "✅" : "⬜️"}
                 </button>
-                <p className={isActive[index] ? "list_item_text checked_item" : "list_item_text"} onClick={checkTask(index)}>{task}</p>
+                <p className={userTasks[task]  ? "list_item_text checked_item" : "list_item_text"} onClick={() => checkTask(task)}>{task}</p>
                 <button className="button_bin" onClick={() => deleteTask(task)}>
                 🗑️ 
                 </button> 
                 </div>
             </li>)}
         </div>
+        <div className="counter">Pending tasks: {count}</div>
+        </>
     );
 
 }

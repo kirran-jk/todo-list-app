@@ -50,3 +50,9 @@
   margin: 0;
   padding-left: 5%;
 }
+
+.counter {
+  background-color: #E1F2EF;
+  text-align: center;
+  padding-top: 2%;
+}
