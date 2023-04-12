@@ -11,4 +11,4 @@ export class Welcome extends React.Component {
     }
 }
 
-export const Header = (props) => (<div className="header">What To-Do {props.name}? 📝 </div>)
+export const Header = (props) => (<div className="header">What to-do {props.name}? 📝 </div>)
