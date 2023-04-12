@@ -8,12 +8,12 @@ function Content(props) {
     const [task, setTask] = useState({});
 
     function handleSubmit(entry) {
-        task[props.username].push(entry);
+        task[props.username][entry] = false;
         setTask({...task})
     }
 
     if (!task.hasOwnProperty(props.username)) {
-        task[props.username] = [];
+        task[props.username] = {};
         setTask(task)
     }
 
