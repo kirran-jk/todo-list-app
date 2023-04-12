@@ -1,0 +1,52 @@
+#myList {
+  list-style-type: none;
+  background-color: white;
+  width: 90%;
+  color: #626567;
+  text-align: left;
+  font-size: medium;
+  line-height: 2;
+  padding: 0%;
+}
+
+.list_item:nth-child(odd) {
+  background: #eee;
+}
+
+.list_item:hover {
+  background: #ddd;
+}
+
+.button_check {
+  cursor: pointer;
+  position: absolute;
+  left: 1%;
+  top: 20%;
+  background: none;
+  border: none;
+}
+
+.checked_item {
+  text-decoration: line-through;
+  background: #888;
+  color: white;
+}
+
+.button_bin {
+  cursor: pointer;
+  position: absolute;
+  right: 1%;
+  top: 20%;
+  background: none;
+  border: none;
+}
+
+.list_item_container {
+  position: relative;
+  cursor: pointer;
+}
+
+.list_item_text {
+  margin: 0;
+  padding-left: 5%;
+}

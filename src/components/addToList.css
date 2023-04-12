@@ -1,0 +1,11 @@
+.header {
+  background-color: #9EB2AF;
+  width:90%;
+  padding-bottom: 2%;
+  padding-top: 2%;
+  color: white;
+}
+
+.new-todo-input {
+  width: 80%;
+}
