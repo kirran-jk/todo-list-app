@@ -6,14 +6,20 @@ import './username.css';
 function GetUsername(props) {
 
     const [name, setName] = useState("");
+    const [username, setUsername] = useState(name);
 
     function handleChange(username) {
         setName(username.target.value);
-    }
+    };
+
+    function handleClick(input) {
+        input.preventDefault();
+        setUsername(name)
+    };
 
     return (
         <>
-            <h6 className="username">Enter your name here: &emsp;
+            <form><h6 className="username">Enter your name here: &emsp;
             <input 
             type="text"
             className="username_input"
@@ -22,12 +28,13 @@ function GetUsername(props) {
             autoComplete="off"
             value={name}
             onChange={handleChange}
-            /></h6>
+            />
+            <button type="submit" onClick={handleClick}>Enter</button></h6></form>
             <br />
-            <Welcome name={name}/>
+            <Welcome name={username}/>
             <br />
-            <Header name={name}/>
-            <Content username={name}/>
+            <Header name={username}/>
+            <Content username={username}/>
         </>
     )
 
