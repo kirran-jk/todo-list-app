@@ -42,7 +42,7 @@ function List(props) {
                 {userTasks[task] ? "✅" : "⬜️"}
                 </button>
                 <p className={userTasks[task]  ? "list_item_text checked_item" : "list_item_text"} onClick={() => checkTask(task)}>{task}</p>
-                <button className="button_bin" onClick={() => deleteTask(task)}>
+                <button className="button_bin hide" onClick={() => deleteTask(task)}>
                 🗑️ 
                 </button> 
                 </div>

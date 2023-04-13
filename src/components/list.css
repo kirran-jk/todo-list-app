@@ -17,6 +17,14 @@
   background: #ddd;
 }
 
+.hide {
+  display: none;
+}
+
+.list_item:hover .hide {
+  display: block;
+}
+
 .button_check {
   cursor: pointer;
   position: absolute;
