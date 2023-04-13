@@ -57,6 +57,19 @@
 .list_item_text {
   margin: 0;
   padding-left: 5%;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 550px) {
+  .list_item_text {padding-left: 7%;}
+}
+
+@media screen and (max-width: 350px) {
+  .list_item_text {padding-left: 9%;}
+}
+
+p {
+  margin: 10%;
 }
 
 .counter {

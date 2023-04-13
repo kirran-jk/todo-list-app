@@ -19,17 +19,19 @@ function GetUsername(props) {
 
     return (
         <>
-            <form><h6 className="username">Enter your name here: &emsp;
-            <input 
-            type="text"
-            className="username_input"
-            placeholder="What's your name?"
-            name="text"
-            autoComplete="off"
-            value={name}
-            onChange={handleChange}
-            />
-            <button type="submit" onClick={handleClick}>Enter</button></h6></form>
+            <div className="username_container">
+                <form><h6 className="username">Enter your name here: &emsp;
+                <input 
+                type="text"
+                className="username_input"
+                placeholder="What's your name?"
+                name="text"
+                autoComplete="off"
+                value={name}
+                onChange={handleChange}
+                />
+                <button type="submit" onClick={handleClick}>Enter</button></h6></form>
+            </div>
             <br />
             <Welcome name={username}/>
             <br />

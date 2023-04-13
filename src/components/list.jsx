@@ -39,7 +39,7 @@ function List(props) {
             <li className= "list_item" key={task}>
                 <div className="list_item_container">
                 <button className="button_check" onClick={() => checkTask(task)}>
-                {userTasks[task] ? "✅" : "⬜️"}
+                {userTasks[task] ? "✅" : "⬜️"} 
                 </button>
                 <p className={userTasks[task]  ? "list_item_text checked_item" : "list_item_text"} onClick={() => checkTask(task)}>{task}</p>
                 <button className="button_bin hide" onClick={() => deleteTask(task)}>

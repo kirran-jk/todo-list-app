@@ -6,3 +6,16 @@
     margin: 0;
 }
 
+.username_container {
+    padding-bottom: 2%;
+}
+
+.username_input {
+    width: 35%;
+}
+
+@media screen and (max-width: 500px) {
+    .username {font-size: small;};
+    .username_input {width: 20%;}
+  }
+
